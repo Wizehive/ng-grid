@@ -1,142 +1,188 @@
-<!doctype html>
-<html lang="en" ng-app="myApp">
-<head>
-	<meta charset="utf-8">
-	<title>ng-grid</title>
-	<link rel="stylesheet" href="css/ng-grid.css"/>
-    <link rel="stylesheet" href="lib/FortAwesome-Font-Awesome-ee55c85/css/font-awesome.css" />	
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="css/prettify.css"/>
-	<link rel="stylesheet" href="lib/jquery-ui/css/overcast/jquery-ui-1.9.1.custom.css" />
-	<link rel="stylesheet" href="css/app.css"/>
+<!DOCTYPE html>
+<html>
 
-	<script type="text/javascript" src="lib/prettify.js"></script>
-	<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" src="lib/jquery-ui/js/jquery-ui-1.9.1.custom.js"></script>
-	<script type="text/javascript" src="lib/angular.js"></script>
-	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="lib/ng-grid.debug.js"></script>
-	<script type="text/javascript" src="lib/ng-grid-layout.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/services.js"></script>
-	<script type="text/javascript" src="js/directives.js"></script>
-	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/exampleControllers.js"></script>
-</head>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ng-grid : Angular Data Grid based on slickgrid/koGrid" />
 
-<body>
-	<header class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<div class="dropdown pull-left">
-					<a class="brand dropdown-toggle" role="button" data-toggle="dropdown" href="#"> 
-						ng-grid
-						<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						<li><a href="https://github.com/angular-ui/"><strong>Related Projects:</strong></a></li>
-						<li class="divider"></li>
-						<li><a href="http://angular-ui.github.com/">AngularUI</a></li>
-						<li><a href="http://angular-ui.github.com/bootstrap/">Bootstrap</a></li>
-						<li><a href="https://github.com/angular-ui/AngularJs.tmbundle">AngularJS.tmbundle</a></li>
-						<li><a href="http://angular-ui.github.io/ui-router/sample/">Router <span class="label label-success">New!</span></a></li>
-						<li><a href="http://angular-ui.github.com/Tips-n-Tricks/">Tips-n-Tricks <span class="label">WIP</span></a></li>
-					</ul>
-				</div>
-				<div class="nav-collapse">
-					<ul class="nav bs-docs-sidebar">
-						<li>
-							<a scrollto="" href="#top">Home</a>
-						</li>	
-						<li>
-							<a scrollto="" href="#gettingStarted">Getting Started</a>
-						</li>					
-						<li class="dropdown">
-							<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-								Examples
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">									
-								<li><a scrollto href="#basic">Basic</a></li>
-								<li><a scrollto href="#columnDefs">Column Definitions</a></li>
-								<li><a scrollto href="#grouping">Grouping</a></li>
-								<li><a scrollto href="#templates">Templates</a></li>
-								<li><a scrollto href="#themes">Themes</a></li>
-								<li><a scrollto href="#paging">Server-Side Paging</a></li>
-								<li><a scrollto href="#masterdetail">Master/Detail</a></li>
-								<li><a scrollto href="#cellSelection">Cell Selection</a></li>
-								<li><a scrollto href="#rowSelection">Row Selection</a></li>
-								<li><a scrollto href="#columnPinning">Column Pinning</a></li>
-							</ul>
-						</li>		
-						<li>
-							<a scrollto="" href="#api">API</a>
-						</li>			
-					</ul>
-					<ul class="pull-right nav">
-						<li><a href="https://github.com/angular-ui/ng-grid/graphs/contributors">Contributors</a></li>
-						<li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								Need Help?
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="https://github.com/angular-ui/ng-grid/issues?sort=updated&amp;state=open">ng-grid broken or want a new feature?</a></li>
-								<li><a href="https://github.com/angular-ui/ng-grid/issues?labels=demos&amp;sort=updated&amp;state=open">Demo page broken or missing demos?</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div style="margin: 32px;" id="top"></div>
-	<div data-spy="scroll" data-target=".bs-docs-sidebar">
-		<header class="hero-unit" id="overview">
-			<div class="container">
-				<h1>
-					ng-grid
-				</h1>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-				<p>Angular Data Grid written in <strong><a href="http://angularjs.org">AngularJS</a></strong> and <strong><a href="http://jquery.com">jQuery</a></strong> by the <strong><a href="http://angular-ui.github.com">AngularUI Team</a></strong></p>
+    <title>ng-grid</title>
+  </head>
 
-				<p class="btn-group">
-					<a class="btn btn-primary" href="https://github.com/angular-ui/ng-grid/zipball/master"><i class="icon-white icon-download-alt"></i> Download ZIP</a>
-					<a class="btn" href="https://github.com/angular-ui/ng-grid"><i class="icon-github"></i> Code on Github</a>
-					<a class="btn btn-primary" href="https://github.com/angular-ui/ng-grid/tarball/master"><i class="icon-white icon-download-alt"></i> Download TAR</a>
-				</p>
-			</div>
-			<div class="bs-docs-social">
-				<div class="container">
-					<ul class="bs-docs-social-buttons">
-						<li>
-							<iframe src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ng-grid&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-						</li>
-						<li>
-							<iframe src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ng-grid&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		<div ng-include="'partials/gettingStartedPage.html'"></div>
-		<div ng-include="'partials/examplesPage.html'"></div>
-		<div ng-include="'partials/apiPage.html'" style="clear: both"></div>
-		<div style="margin: 32px;"></div>
-	</div>
-    <script type="text/javascript">
+  <body>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17352735-3']);
-  _gaq.push(['_trackPageview']);
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Wizehive/ng-grid">View on GitHub</a>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+          <h1 id="project_title">ng-grid</h1>
+          <h2 id="project_tagline">Angular Data Grid based on slickgrid/koGrid</h2>
 
-</script>
-</body>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Wizehive/ng-grid/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Wizehive/ng-grid/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="ng-grid--an-angular-datagrid" class="anchor" href="#ng-grid--an-angular-datagrid"><span class="octicon octicon-link"></span></a>ng-grid : An Angular DataGrid</h1>
+
+<p><a href="https://travis-ci.org/angular-ui/ng-grid"><img src="https://travis-ci.org/angular-ui/ng-grid.png" alt="Build Status"></a></p>
+
+<p><em>Note: We are no longer accepting feature based pull requests based on the 2.* branch. All active feature development is happening in the <a href="https://github.com/angular-ui/ng-grid/tree/3.0">3.0 branch</a>. PRs there are encouraged and will be celebrated with virtual high fives all around.  If you are serious about helping 3.0 become a success, join the discussion at <a href="https://gitter.im/angular-ui/ng-grid">https://gitter.im/angular-ui/ng-grid</a></em></p>
+
+<p><strong>Contributors:</strong></p>
+
+<p>ng-grid Team:</p>
+
+<ul>
+<li><a href="http://ornerydevelopment.blogspot.com/">Tim Sweet</a></li>
+<li><a href="https://github.com/jonricaurte">Jonathon Ricaurte</a></li>
+<li><a href="https://github.com/c0bra">Brian Hann</a></li>
+<li><a href="https://github.com/roblarsen">Rob Larsen</a></li>
+<li><a href="https://github.com/swalters">Shane Walters</a></li>
+</ul><p>License: <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a></p>
+
+<p>Dependencies: jQuery &amp; angular.js. (JqueryUi draggable for non-HTML5 compliant browsers to use awesome Drag-N-Drop aggregate feature. However, you can still groupby without draggability)</p>
+
+<hr><h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p><strong>ng-grid</strong> Originally built on knockout we wanted to port it to angular.</p>
+
+<p>version 2.0.11</p>
+
+<p><a href="https://nuget.org/packages/ng-grid">nuGet</a></p>
+
+<p>Questions, Comments, Complaints? feel free to email us at <a href="mailto:nggridteam@gmail.com">nggridteam@gmail.com</a></p>
+
+<hr><h2>
+<a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
+
+<p>We are going to be adding more features here as we head to a 3.0 release, including:</p>
+
+<ul>
+<li>Anything else the rest of the community wants to contribute that isn't a terrible idea. :)</li>
+</ul><hr><p><em>The bare bones</em>:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ng-grid.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,[</span><span class="s1">'ngGrid'</span><span class="p">,</span> <span class="p">...</span> <span class="p">{</span><span class="nx">other</span> <span class="nx">includes</span><span class="p">}]);</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"../ng-grid.css"</span> <span class="nt">/&gt;</span> 
+<span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">"myApp"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-grid=</span><span class="s">"myOptions"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// Define your own controller somewhere..</span>
+<span class="kd">function</span> <span class="nx">MyCtrl</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">myData</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Moroni"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">50</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Teancum"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Jacob"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">27</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Nephi"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">29</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Enos"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">34</span><span class="p">}];</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">myOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">data</span><span class="o">:</span> <span class="s1">'myData'</span> <span class="p">};</span>
+    <span class="c1">// you can also specify data as: $scope.myOptions = { data: $scope.myData }. </span>
+    <span class="c1">// However, updates to the underlying data will not be reflected in the grid</span>
+<span class="p">};</span>
+
+</pre></div>
+
+<h2>
+<a name="want-more" class="anchor" href="#want-more"><span class="octicon octicon-link"></span></a>Want More?</h2>
+
+<p>Check out the <a href="https://github.com/angular-ui/ng-grid/wiki/Getting-started">Getting Started</a> and other <a href="https://github.com/angular-ui/ng-grid/wiki">Docs</a></p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p><a href="http://angular-ui.github.com/ng-grid/">Examples</a></p>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>The testing setup is based on the <a href="https://github.com/angular/angular-seed/">angular-seed project</a>.</p>
+
+<p>Make sure to set your CHROME_BIN environment variable to the full path to chrome.exe (not just its directory).</p>
+
+<h3>
+<a name="grunt-tasks" class="anchor" href="#grunt-tasks"><span class="octicon octicon-link"></span></a>Grunt tasks</h3>
+
+<p>There are a few grunt tasks for running tests:</p>
+
+<pre><code># Run unit tests
+&gt; grunt karma:unit
+# Or use this alias:
+&gt; grunt test
+
+# Run end-to-end tests (make sure to first start a web server as specified below)
+&gt; grunt karma:e2e
+
+# Run midway tests
+&gt; grunt karma:midway
+</code></pre>
+
+<h3>
+<a name="end-to-end-tests" class="anchor" href="#end-to-end-tests"><span class="octicon octicon-link"></span></a>End-to-end tests</h3>
+
+<p>The e2e tests need a webserver to run. A simple one from the angular-seed project is included:</p>
+
+<pre><code>&gt; ./scripts/web-server.js
+</code></pre>
+
+<h3>
+<a name="automated-testing-and-building" class="anchor" href="#automated-testing-and-building"><span class="octicon octicon-link"></span></a>Automated testing and building</h3>
+
+<p>Running this task will automatically rebuild <code>build/ng-grid.debug.js</code> when source files change, and run unit tests when <code>build/ng-grid.debug.js</code> or unit test files change. Youc an use this for testing during development.</p>
+
+<pre><code># Run this in its own window
+&gt; grunt testwatch
+</code></pre>
+
+<h3>
+<a name="integration-testing" class="anchor" href="#integration-testing"><span class="octicon octicon-link"></span></a>Integration testing</h3>
+
+<p>There is a task for CI testing with PhantomJS</p>
+
+<ol>
+<li>Make sure the PHANTOMJS_BIN environment variable  is set properly</li>
+<li>PhantomJS with the singleRun option doesn't appear to function properly in Windows. The tests will run but PhantomJS will not automatically close.</li>
+<li>
+<p>This task first builds the debug version of the source files and does not clean them up. If you run it you will have uncommitted changes in your working directory that you probably want to lose. <code>git checkout build</code> to lose them.</p>
+
+<blockquote>
+<p>grunt test-ci</p>
+</blockquote>
+</li>
+</ol><h3>
+<a name="selecting-browsers" class="anchor" href="#selecting-browsers"><span class="octicon octicon-link"></span></a>Selecting browsers</h3>
+
+<p>All the test tasks accept a <code>--browsers</code> command line option that will be passed to karma.</p>
+
+<pre><code># Automatically re-run tests in both Chrome and FF.
+grunt testwatch --browsers=Chrome,Firefox
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ng-grid maintained by <a href="https://github.com/Wizehive">Wizehive</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
