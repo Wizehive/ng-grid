@@ -413,10 +413,10 @@ angular.module('ngGrid.services').factory('$sortService', ['$parse', function($p
         return numA - numB;
     };
     sortService.sortAlpha = function(a, b) {
-        a = a || '';
+	a = a || '';
 	b = b || '';
 	var strA = a.toLowerCase(),
-            strB = b.toLowerCase();
+		strB = b.toLowerCase();
         return strA === strB ? 0 : (strA < strB ? -1 : 1);
     };
     sortService.sortDate = function(a, b) {
