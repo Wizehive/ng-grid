@@ -1225,7 +1225,7 @@ var ngGrid = function ($scope, options, sortService, domUtilityService, $filter,
         },
         enableCellEdit: false,
         enableCellEditOnFocus: false,
-        enableCellSelection: false,
+        enableCellSelection: true,
         enableColumnResize: false,
         enableColumnReordering: false,
         enableColumnHeavyVirt: false,
@@ -1275,7 +1275,7 @@ var ngGrid = function ($scope, options, sortService, domUtilityService, $filter,
         useExternalSorting: false,
         i18n: 'en',
         virtualizationThreshold: 50,
-	noTabInterference: false
+	noTabInterference: true
     },
         self = this;
     self.maxCanvasHt = 0;
