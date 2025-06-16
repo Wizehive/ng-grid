@@ -75,6 +75,13 @@ ngGridDirectives.directive('ngCellHasFocus', ['$domUtilityService',
                         elm.focus();
                     }
                 }
+
+                // If Enter is pressed
+                if (evt.keyCode === 13) {
+                    // Trigger a click event manually
+                    elm[0].click();
+                }
+
                 return true;
             }
 
